@@ -28,6 +28,7 @@ def main():
     build_input = os.environ['INPUT_IMAGE_AND_DOCKERFILE_PATH']
 
     build_arr = build_input.split(' ')
+    print (build_arr)
     image_names = build_arr[::2]
     dockerfile_paths = build_arr[1::2]
 

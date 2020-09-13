@@ -2,6 +2,12 @@ name: Parallel Build and Publish
 description: Parallel Build and Publish containers on GCR 
 author: Anirudh G J
 inputs:
+  ENCODED_GOOGLE_APPLICATION_CREDENTIALS:
+    description: The base64 encoded google credentials
+    required: true
+  GOOGLE_APPLICATION_CREDENTIALS:
+    description: The path to the decoded google credentials
+    required: true    
   GKE_PROJECT:
     description: Name of the GCS project for publishing images on GCR 
     required: false

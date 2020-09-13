@@ -11,7 +11,6 @@ def main():
 
     logging.info("Started the process to build containers in parallel")
     logging.info("Authenticating") 
-    logging.info(os.environ)
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["INPUT_GOOGLE_APPLICATION_CREDENTIALS"]
 
     print (os.environ["GOOGLE_APPLICATION_CREDENTIALS"])

@@ -8,8 +8,7 @@ COPY . .
 
 RUN chmod +x /entrypoint.sh
 
-RUN pip install google-cloud-storage==1.28.1
-RUN pip install google-cloud-bigquery==1.24.0
+RUN  pip install -r requirements.txt
 
 RUN apt-get update; apt-get install curl -y ; apt-get install -y vim
 RUN apt-get install -y wget \

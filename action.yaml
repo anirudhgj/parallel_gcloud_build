@@ -1,0 +1,18 @@
+name: Parallel Build and Publish 
+description: Parallel Build and Publish containers on GCR 
+author: Anirudh G J
+inputs:
+  GKE_PROJECT:
+    description: Name of the GCS project for publishing images on GCR 
+    required: false
+  GIT_SHA:
+    description: GIT SHA for versioning the images
+    required: true
+  IMAGE_AND_DOCKERFILE_PATH:
+    description: Name of the image to be stored in GCR and Dockerfile path to build the image
+branding:
+  color: 'purple'
+  icon: 'upload-cloud'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

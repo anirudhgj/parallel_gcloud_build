@@ -34,7 +34,7 @@ def main():
 
     logging.info("submitting the processes to the background")
 
-    for i in range(len(build_arr)/2):
+    for i in range(int(len(build_arr)/2)):
         image = image_names[i]
         dockerfile_path = dockerfile_paths[i]
         cmd = f"gcloud builds submit --tag gcr.io/{project_name}/{image}:${git_sha} {dockerfile_path} &"

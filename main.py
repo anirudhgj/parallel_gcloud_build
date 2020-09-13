@@ -35,7 +35,7 @@ def main():
 
     for i in range(len(build_arr)):
         image = image_names[i]
-        dockerfile_path = dockerfile_path[i]
+        dockerfile_path = dockerfile_paths[i]
         cmd = f"gcloud builds submit --tag gcr.io/{project_name}/{image}:${git_sha} {dockerfile_path} &"
         os.system(cmd)        
         os.system("sleep 1")

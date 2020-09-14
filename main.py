@@ -39,7 +39,7 @@ def main():
         image = image_names[i]
         dockerfile_path = dockerfile_paths[i]
         cmd = f"gcloud builds submit --tag gcr.io/{project_name}/{image}:${git_sha} {dockerfile_path} &"
-        cmd_output =  subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout
+        cmd_output =  subprocess.call(cmd, shell=True)
         run_output =  cmd_output.read()
         subprocess.call("sleep 1",shell=True)
         print (run_output.decode())

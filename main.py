@@ -3,6 +3,7 @@ import logging
 import sys
 import json 
 from datetime import datetime
+import subprocess
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
@@ -38,8 +39,10 @@ def main():
         image = image_names[i]
         dockerfile_path = dockerfile_paths[i]
         cmd = f"gcloud builds submit --tag gcr.io/{project_name}/{image}:${git_sha} {dockerfile_path} &"
-        os.system(cmd)        
-        os.system("sleep 1")
+        cmd_output =  subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE).stdout
+        run_output =  cmd_output.read()
+        subprocess.call("sleep 1",shell=True)
+        print (run_output.decode())
     
 if __name__ == "__main__":
     main()

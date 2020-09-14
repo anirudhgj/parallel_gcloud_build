@@ -15,10 +15,9 @@ example:- copy the output of
 cat path-to-key.json | base64
 ```
 
-
 GKE_PROJECT - Google Project where the Kubernetes Cluster is defined(can be located on GCP dashboard inside "Project Info" --> "Project ID" should be used) \
 ENCODED_GOOGLE_APPLICATION_CREDENTIALS : Base64 encoded Google Application Credentials \
-GOOGLE_APPLICATION_CREDENTIALS : Path to store the decoded Google Application Credentials \
+GOOGLE_APPLICATION_CREDENTIALS : Path to store the decoded Google Application Credentials 
 
 
 ### Example for parallel building and publishing of containers onto Google Cloud Registry (Mainly used for kubeflow pipelines) :- 

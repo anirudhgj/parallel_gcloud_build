@@ -8,8 +8,6 @@ COPY . .
 
 RUN chmod +x /entrypoint.sh
 
-RUN  pip install -r requirements.txt
-
 RUN apt-get update; apt-get install curl -y ; apt-get install -y vim
 RUN apt-get install -y wget \
   && rm -rf /var/lib/apt/lists/*
